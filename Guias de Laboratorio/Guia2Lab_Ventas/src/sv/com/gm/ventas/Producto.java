@@ -1,4 +1,4 @@
-package sv.edu.ues.ventas;
+package sv.com.gm.ventas;
 
 /**
  *
@@ -6,34 +6,23 @@ package sv.edu.ues.ventas;
  */
 public class Producto {
 
-    public static int getContadorProductos() {
-        return contadorProductos;
-    }
-
-    public static void setContadorProductos(int aContadorProductos) {
-        contadorProductos = aContadorProductos;
-    }
-    final int idProducto;
+    private final int idProducto;
     private String nombre;
     private double precio;
     private static int contadorProductos;
 
-    public Producto(int idProducto) {
+    public Producto() {
         this.idProducto = ++Producto.contadorProductos;
     }
 
-    public Producto(int idProducto, String nombre, double precio) {
-        this.idProducto = idProducto;
+    public Producto(String nombre, double precio) {
+        this();
         this.nombre = nombre;
         this.precio = precio;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public double getIdProducto() {
+        return idProducto;
     }
 
     public String getNombre() {
@@ -44,14 +33,25 @@ public class Producto {
         this.nombre = nombre;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public static int getContadorProductos() {
+        return contadorProductos;
+    }
+
+    public static void setContadorProductos(int aContadorProductos) {
+        contadorProductos = aContadorProductos;
+    }
+
     @Override
     public String toString() {
         return "Producto{" + "idProducto=" + idProducto + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
-
-    
-    
-    
-    
 
 }
